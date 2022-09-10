@@ -1,8 +1,6 @@
-#! /usr/bin/python
-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """PipSearch library"""
-
-
 from .api import search
 
-version = "0.0.2"
+VERSION = "0.0.2"
