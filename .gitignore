@@ -90,3 +90,6 @@ ENV/
 
 # custom test file, remember to remove
 sample.*
+
+# Pycharm project settings .idea directory
+.idea
