@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """PipSearch library"""
-from .api import search
+import pipsearch.api as ps
 
-VERSION = "0.0.2"
+__version__ = "0.0.2"
+__package_name__ = "pipsearch"
+
+__all__ = ['ps']
