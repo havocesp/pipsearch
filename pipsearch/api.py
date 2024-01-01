@@ -1,14 +1,13 @@
 #! /usr/bin/python
 
 import re
-
-import requests
 from bs4 import BeautifulSoup
+from security import safe_requests
 
 
 def search(term):
 	url = f"https://pypi.python.org/pypi?:action=search&term={term}"
-	req = requests.get(url)
+	req = safe_requests.get(url)
 
 	soup = BeautifulSoup(req.text, 'html.parser')
 
