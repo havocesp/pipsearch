@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 def search(term):
 	url = f"https://pypi.python.org/pypi?:action=search&term={term}"
-	req = requests.get(url)
+	req = requests.get(url, timeout=60)
 
 	soup = BeautifulSoup(req.text, 'html.parser')
 
