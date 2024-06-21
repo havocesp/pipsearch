@@ -22,20 +22,20 @@ exclude_pkgs = [
 
 setup(
     name='pipsearch',
-    version='0.0.3',
+    version='0.1.0',
     packages=find_packages(exclude=exclude_pkgs),
     url=f'https://github.com/havocesp/{__package__}',
     license='UNLICENSE',
     packages_dir={'': __package__},
     author='Havocesp',
-    author_email='umpierrez@pm.me',
+    author_email='10012416+havocesp@users.noreply.github.com',
     long_description='PyPI.org packages search app',
     description='PyPI.org packages search app',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.10',
@@ -45,5 +45,5 @@ setup(
             'pipsearch = pipsearch.main:run'
         ]
     },
-    install_requires=['bs4', 'requests', 'tabulate', 'dateutils'],
+    install_requires=['bs4', 'requests', 'tabulate', 'dateutils', 'lxml'],
 )
