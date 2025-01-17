@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 from dateutil.parser import parse as datepase
 
 from pipsearch.utils import wait
+from security import safe_requests
 
 _BASE_URL = 'https://pypi.python.org'
 
@@ -67,7 +68,7 @@ def search(term: str, page=1, max_pages=10, brief=False) -> List:
 
     url = f"{_BASE_URL}/search?q={term}&page={page}"
 
-    response = requests.get(url, timeout=(60, 60))
+    response = safe_requests.get(url, timeout=(60, 60))
     if response.ok:
         bs = BeautifulSoup(response.text, 'lxml')
         select_result = bs.select_one('a.button:nth-child(6)')
@@ -93,7 +94,7 @@ def search(term: str, page=1, max_pages=10, brief=False) -> List:
         page += 1
         print(f" - [INFO] Page: {page}/{max_pages} - Last page: {last_page}")
         url = f"{_BASE_URL}/search?q={term}&page={page}"
-        response = requests.get(url, timeout=(60, 60))
+        response = safe_requests.get(url, timeout=(60, 60))
         entries = searh_parse(response)
         packages.extend(entries)
         if response.ok:
