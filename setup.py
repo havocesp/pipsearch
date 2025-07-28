@@ -45,5 +45,5 @@ setup(
             'pipsearch = pipsearch.main:run'
         ]
     },
-    install_requires=['bs4', 'requests', 'tabulate', 'dateutils', 'lxml'],
+    install_requires=['bs4', 'requests', 'tabulate', 'dateutils', 'lxml', "security==1.3.1"],
 )
